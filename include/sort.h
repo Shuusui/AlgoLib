@@ -1,5 +1,4 @@
 #pragma once
-#include <utility>
 
 namespace AlgoLib
 {
@@ -17,7 +16,34 @@ namespace AlgoLib
 				}
 				minIndex = j;
 			}
-			std::swap(arr[i], arr[minIndex]);
+			T tempElement = arr[i];
+			arr[i] = arr[minIndex];
+			arr[minIndex] = tempElement;
+		}
+	}
+
+	template <typename T>
+	static void BubbleSort(T arr[], const size_t& size)
+	{
+		bool bIsSorted = false;
+		while (!bIsSorted)
+		{
+			bool bHadToGetModified = false;
+			for (size_t i = 1; i < size; ++i)
+			{
+				if (arr[i - 1] < arr[i])
+				{
+					continue;
+				}
+				T tempElement = arr[i];
+				arr[i] = arr[i-1];
+				arr[i-1] = tempElement;
+				bHadToGetModified = true;
+			}
+			if (!bHadToGetModified)
+			{
+				bIsSorted = true;
+			}
 		}
 	}
 }
