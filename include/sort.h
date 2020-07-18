@@ -46,4 +46,23 @@ namespace AlgoLib
 			}
 		}
 	}
+
+	template <typename T>
+	static void InsertionSort(T arr[], const size_t& size)
+	{
+		for (size_t i = 1; i < size; ++i)
+		{
+			for (size_t j = 0; j < i; ++j)
+			{
+				if (arr[i] > arr[j])
+				{
+					continue;
+				}
+				for (size_t k = j; k < i; ++k)
+				{
+
+				}
+			}
+		}
+	}
 }
